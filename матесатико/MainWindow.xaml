@@ -1,0 +1,113 @@
+﻿<Window x:Class="матесатико.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:матесатико"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="LightGray" Margin="10">
+            <!-- Player Grid -->
+            <Grid x:Name="playerGrid" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="cell00" Grid.Row="0" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell01" Grid.Row="0" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell02" Grid.Row="0" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell03" Grid.Row="0" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell04" Grid.Row="0" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell10" Grid.Row="1" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell11" Grid.Row="1" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell12" Grid.Row="1" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell13" Grid.Row="1" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell14" Grid.Row="1" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell20" Grid.Row="2" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell21" Grid.Row="2" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell22" Grid.Row="2" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell23" Grid.Row="2" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell24" Grid.Row="2" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell30" Grid.Row="3" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell31" Grid.Row="3" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell32" Grid.Row="3" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell33" Grid.Row="3" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell34" Grid.Row="3" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell40" Grid.Row="4" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell41" Grid.Row="4" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell42" Grid.Row="4" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell43" Grid.Row="4" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="cell44" Grid.Row="4" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+            </Grid>
+            <Label x:Name="playerScoreLabel" Content="Очки игрока: 0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="10">
+            <Label x:Name="deckLabel" Content="Карта" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+            <Button x:Name="restartButton" Content="Заново" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Click="RestartButton_Click"/>
+        </Grid>
+
+        <Grid Grid.Column="2" Background="LightGray" Margin="10">
+            <!-- Bot Grid -->
+            <Grid x:Name="botGrid" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="botCell00" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell01" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell02" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell03" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell04" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell10" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell11" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell12" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell13" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell14" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell20" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell21" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell22" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell23" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell24" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell30" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell31" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell32" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell33" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell34" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell40" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell41" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell42" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell43" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+                <Button x:Name="botCell44" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
+            </Grid>
+            <Label x:Name="botScoreLabel" Content="Очки бота: 0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>
