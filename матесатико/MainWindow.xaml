@@ -1,113 +1,84 @@
 ﻿<Window x:Class="матесатико.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:матесатико"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Математико" Height="600" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="120" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <TextBlock Text="Математико" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-        <Grid Grid.Column="0" Background="LightGray" Margin="10">
-            <!-- Player Grid -->
-            <Grid x:Name="playerGrid" ShowGridLines="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button x:Name="cell00" Grid.Row="0" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell01" Grid.Row="0" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell02" Grid.Row="0" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell03" Grid.Row="0" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell04" Grid.Row="0" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell10" Grid.Row="1" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell11" Grid.Row="1" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell12" Grid.Row="1" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell13" Grid.Row="1" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell14" Grid.Row="1" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell20" Grid.Row="2" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell21" Grid.Row="2" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell22" Grid.Row="2" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell23" Grid.Row="2" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell24" Grid.Row="2" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell30" Grid.Row="3" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell31" Grid.Row="3" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell32" Grid.Row="3" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell33" Grid.Row="3" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell34" Grid.Row="3" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell40" Grid.Row="4" Grid.Column="0" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell41" Grid.Row="4" Grid.Column="1" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell42" Grid.Row="4" Grid.Column="2" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell43" Grid.Row="4" Grid.Column="3" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="cell44" Grid.Row="4" Grid.Column="4" Click="Cell_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-            </Grid>
-            <Label x:Name="playerScoreLabel" Content="Очки игрока: 0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        </Grid>
+                <TextBlock TextWrapping="Wrap">
+                    Имеется набор из 52 карточек, на которых записаны числа от 1 до 13, причем карточки с каждым из этих чисел встречаются четырежды.  
+                    У каждого игрока имеется квадратное поле с 25 клетками. Программа случайным образом извлекает какую-либо из имеющихся карточек и выдает записанное на ней число. 
+                    Каждый игрок заносит это число в одну из клеток квадрата на своем поле. После того, как число записано, перемещать его в другую клетку запрещается. 
+                    Затем программа случайным образом извлекает следующую карточку и.т.д. Так продолжается до тех пор, пока не будут заполнены все клетки квадрата.
+                </TextBlock>
 
-        <Grid Grid.Column="1" Margin="10">
-            <Label x:Name="deckLabel" Content="Карта" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
-            <Button x:Name="restartButton" Content="Заново" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" Click="RestartButton_Click"/>
-        </Grid>
+                <TextBlock Text="Подсчет очков:" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" Margin="0,20,0,10"/>
 
-        <Grid Grid.Column="2" Background="LightGray" Margin="10">
-            <!-- Bot Grid -->
-            <Grid x:Name="botGrid" ShowGridLines="True">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Button x:Name="botCell00" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell01" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell02" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell03" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell04" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell10" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell11" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell12" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell13" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell14" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell20" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell21" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell22" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell23" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell24" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell30" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell31" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell32" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell33" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell34" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell40" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell41" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell42" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell43" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-                <Button x:Name="botCell44" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1"/>
-            </Grid>
-            <Label x:Name="botScoreLabel" Content="Очки бота: 0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-        </Grid>
+                <Grid Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Комбинация" Margin="10" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Grid.Row="0" Text="Очки за ряд" Margin="10" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Column="2" Grid.Row="0" Text="Очки за диагональ" Margin="10" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="За 2 одинаковых числа" Margin="10"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="10" Margin="10"  HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="20" Margin="10"  HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="За 2 пары одинаковых чисел" Margin="10"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="20" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="30" Margin="10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="За 3 одинаковых числа" Margin="10"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="40" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="50" Margin="10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="За 3 одинаковых числа и два других одинаковых числа" Margin="10"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="80" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="4" Grid.Column="2" Text="90" Margin="10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="За 4 одинаковых числа" Margin="10"/>
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="160" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="5" Grid.Column="2" Text="170" Margin="10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="За 5 последовательных чисел" Margin="10"/>
+                    <TextBlock Grid.Row="6" Grid.Column="1" Text="50" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="6" Grid.Column="2" Text="60" Margin="10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="За три раза по 1 и два раза по 13" Margin="10"/>
+                    <TextBlock Grid.Row="7" Grid.Column="1" Text="100" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="7" Grid.Column="2" Text="110" Margin="10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="За числа 1, 13, 12, 11 и 10" Margin="10"/>
+                    <TextBlock Grid.Row="8" Grid.Column="1" Text="150" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="8" Grid.Column="2" Text="160" Margin="10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="9" Grid.Column="0" Text="За 4 единицы" Margin="10"/>
+                    <TextBlock Grid.Row="9" Grid.Column="1" Text="200" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="9" Grid.Column="2" Text="210" Margin="10" HorizontalAlignment="Center"/>
+                </Grid>
+
+                <Button Content="Начать" Height="50" Width="100" HorizontalAlignment="Center" Click="StartGame_Click"/>
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
